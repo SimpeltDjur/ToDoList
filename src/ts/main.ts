@@ -7,12 +7,41 @@ let lista: Task[] = [
   new Task("Dö", false),
 ];
 
+let showDoneTaskes: boolean = true;
+
 taskDoneSort(lista);
 
 makeList(lista, "list");
 
+let saveButton = document.getElementById("save");
+saveButton.addEventListener("click", saveToDo);
+
+function saveToDo() {
+  let todo = (<HTMLInputElement>document.getElementById("newtodo")).value;
+  if (todo != "") {
+    let task: Task = new Task(todo, false);
+    lista.push(task);
+    makeList(lista, "list");
+  }
+}
+
+let show = document.getElementById("show").addEventListener("click", showDone);
+
+function showDone() {
+  showDoneTaskes = true;
+  makeList(lista, "list");
+}
+
+let hide = document.getElementById("hide").addEventListener("click", hideDone);
+
+function hideDone() {
+  showDoneTaskes = false;
+  makeList(lista, "list");
+}
+
 //Recursive function that generates a html version of a
 //Task[] and sorts it based on wether the task is done or not.
+// Allso adds eventlisteners to both the text and the side buttons.
 function makeList(lista: Task[], id: string) {
   let showList = document.getElementById(id);
 
@@ -73,7 +102,9 @@ function makeList(lista: Task[], id: string) {
       span.classList.add("done");
     }
 
-    showList.appendChild(li);
+    if (showDoneTaskes || lista[i].done === false) {
+      showList.appendChild(li);
+    }
   }
 }
 
@@ -90,5 +121,3 @@ function taskDoneSort(lista: Task[]) {
     }
   });
 }
-//Hur man hittar index
-let index = lista.findIndex((element) => element.title === lista[1].title);

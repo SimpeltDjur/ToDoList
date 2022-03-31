@@ -8,6 +8,22 @@
 .flex {
   display: flex;
 }
+.column {
+  flex-direction: column;
+  align-items: center;
+}
+
+.align {
+  align-items: center;
+}
+
+.grow {
+  width: 100%;
+}
+
+.justify {
+  justify-content: space-evenly;
+}
 
 .flexList {
   display: flex;

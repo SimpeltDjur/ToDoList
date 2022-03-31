@@ -9,16 +9,29 @@
     <title>ToDoList</title>
   </head>
   <body>
-    <div class="flex">
+    <div class="flexList">
       <div class="flexList">
         <h2>To Do List</h2>
+
         <ul id="list"></ul>
       </div>
-      <div class="showMe">
-        <form action="">
-          <label for="new">Ny Syssla: </label>
-          <input type="text" id="new" placeholder="Add New To Do" />
+      <div class="">
+        <form action="" class="flex">
+          <input
+            type="text"
+            id="newtodo"
+            name="newtodo"
+            placeholder="New To Do"
+          />
+
+          <button type="button" id="save">Add</button>
         </form>
+        <button type="button" class="grow" id="show">
+          Show Finished tasks
+        </button>
+        <button type="button" class="grow" id="hide">
+          Hide Finished tasks
+        </button>
       </div>
     </div>
   </body>
