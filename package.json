@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/SimpeltDjur/ToDoList/issues"
   },
-  "homepage": "https://github.com/SimpeltDjur/ToDoList#readme"
+  "homepage": "https://github.com/SimpeltDjur/ToDoList#readme",
+  "devDependencies": {
+    "parcel": "^2.4.0"
+  }
 }
