@@ -26,22 +26,51 @@ function makeList(lista: Task[], id: string) {
   for (let i = 0; i < lista.length; i++) {
     let li = document.createElement("li");
 
-    li.innerHTML = lista[i].title;
+    let buttonUp = document.createElement("button");
+    buttonUp.innerHTML = "up";
 
-    li.addEventListener("click", () => {
+    let span = document.createElement("span");
+    span.innerHTML = lista[i].title;
+
+    let buttonDown = document.createElement("button");
+    buttonDown.innerHTML = "down";
+
+    li.appendChild(buttonUp);
+    li.appendChild(span);
+    li.appendChild(buttonDown);
+    li.classList.add("adjust");
+
+    buttonUp.addEventListener("click", () => {
+      if (i > 0) {
+        let temp: Task = lista[i - 1];
+        lista[i - 1] = lista[i];
+        lista[i] = temp;
+        makeList(lista, id);
+      }
+    });
+    buttonDown.addEventListener("click", () => {
+      if (i < lista.length - 1) {
+        let temp: Task = lista[i + 1];
+        lista[i + 1] = lista[i];
+        lista[i] = temp;
+        makeList(lista, id);
+      }
+    });
+
+    span.addEventListener("click", () => {
       if (lista[i].done === false) {
         lista[i].done = true;
-        li.classList.add("done");
+        span.classList.add("done");
       } else {
         lista[i].done = false;
-        li.classList.remove("done");
+        span.classList.remove("done");
       }
 
       makeList(lista, id);
     });
 
     if (lista[i].done === true) {
-      li.classList.add("done");
+      span.classList.add("done");
     }
 
     showList.appendChild(li);

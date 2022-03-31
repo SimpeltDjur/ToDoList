@@ -4,3 +4,25 @@
 .styleNone {
   list-style-type: none;
 }
+
+.flex {
+  display: flex;
+}
+
+.flexList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15rem;
+}
+
+.adjust {
+  display: flex;
+  justify-content: space-between;
+  width: 10rem;
+}
+
+.showMe {
+  color: red;
+  background-color: blue;
+}
