@@ -1,0 +1,30 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "Examinating task in Basic JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimpeltDjur/ToDoList.git"
+  },
+  "keywords": [
+    "Awsome",
+    "Better",
+    "then",
+    "VG",
+    "how",
+    "does",
+    "he",
+    "do",
+    "it?"
+  ],
+  "author": "Magnus Behrens",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimpeltDjur/ToDoList/issues"
+  },
+  "homepage": "https://github.com/SimpeltDjur/ToDoList#readme"
+}
